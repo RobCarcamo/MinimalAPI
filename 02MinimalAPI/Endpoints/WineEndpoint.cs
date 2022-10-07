@@ -22,6 +22,8 @@ public class WineEndpoint : IEndpoint
         endpoints.MapDelete("/api/wine/{id:int}", WineController.Delete)
             .Produces(204);
 
+        endpoints.MapGet("/api/wine/TEST", WineController.Test);
+
 
         return endpoints;
     }

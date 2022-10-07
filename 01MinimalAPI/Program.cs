@@ -99,22 +99,22 @@ static IResult WineDelete(int id)
 
 #region Routes
 
-//app.MapGet("/api/route/{id:int}", (int id) => $"ruta get con parametro int:{id}");
-//app.MapGet("/api/route/{text}", (string text) => $"ruta get con parametro string:{text}");
-////otros
-//// Bind query string values to a primitive type array.
-//// GET  /tags?q=1&q=2&q=3
-//app.MapGet("/api/tags", (int[] q) => $"tag1: {q[0]} , tag2: {q[1]}, tag3: {q[2]}");
+app.MapGet("/api/route/{id:int}", (int id) => $"ruta get con parametro int:{id}");
+app.MapGet("/api/route/{text}", (string text) => $"ruta get con parametro string:{text}");
+//otros
+// Bind query string values to a primitive type array.
+// GET  /tags?q=1&q=2&q=3
+app.MapGet("/api/tags", (int[] q) => $"tag1: {q[0]} , tag2: {q[1]}, tag3: {q[2]}");
 
-//// Bind to a string array.
-//// GET /tags2?names=john&names=jack&names=jane
-//app.MapGet("/api/tags2", (string[] names) =>
-//            $"tag1: {names[0]} , tag2: {names[1]}, tag3: {names[2]}");
+// Bind to a string array.
+// GET /tags2?names=john&names=jack&names=jane
+app.MapGet("/api/tags2", (string[] names) =>
+            $"tag1: {names[0]} , tag2: {names[1]}, tag3: {names[2]}");
 
-//// Bind to StringValues.
-//// GET /tags3?names=john&names=jack&names=jane
-//app.MapGet("/api/tags3", (StringValues names) =>
-//            $"tag1: {names[0]} , tag2: {names[1]}, tag3: {names[2]}");
+// Bind to StringValues.
+// GET /tags3?names=john&names=jack&names=jane
+app.MapGet("/api/tags3", (StringValues names) =>
+            $"tag1: {names[0]} , tag2: {names[1]}, tag3: {names[2]}");
 
 
 #endregion

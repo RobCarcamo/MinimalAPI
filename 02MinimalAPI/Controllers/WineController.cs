@@ -1,6 +1,7 @@
 ﻿using _02MinimalAPI.DTO;
 using _02MinimalAPI.Models;
 using _02MinimalAPI.Repository;
+using _02MinimalAPI.Services;
 using AutoMapper;
 using FluentValidation;
 using System.Reflection;
@@ -13,6 +14,10 @@ public static class WineController
     public static IResult GetAll()
     {
         return Results.Ok(WineStore.wines);
+    }
+    public static IResult Test(IWineService wineService)
+    {
+        return Results.Ok(wineService.Test());
     }
 
     //DI: Mapper

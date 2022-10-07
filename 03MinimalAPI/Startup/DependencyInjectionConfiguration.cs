@@ -1,7 +1,8 @@
-﻿using _02MinimalAPI.Services;
+﻿using _03MinimalAPI.Repositories;
+using _03MinimalAPI.Services;
 using FluentValidation;
 
-namespace _02MinimalAPI.Startup;
+namespace _03MinimalAPI.Startup;
 
 public static class DependencyInjectionConfiguration
 {
@@ -14,7 +15,9 @@ public static class DependencyInjectionConfiguration
         services.AddEndpoints();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+
         services.AddSingleton<IWineService, WineService>();
+        services.AddSingleton<IWineRepository, WineRepository>();
 
         return services;
     }
